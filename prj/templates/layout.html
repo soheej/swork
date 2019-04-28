@@ -1,0 +1,30 @@
+{# prj/templates/layout.html#}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>{% block title %}soheej{% endblock %}</title>
+
+    {% block extra_head %}
+        <link rel="stylesheet" href="{% static 'main.css' %}" />
+    {% endblock %}
+</head>
+<body>
+    <h1>soheej</h1>
+
+    {% block content %}
+        <img src="{% static 'sohee.jpg' %}" width="90" height="90" alt="main logo image">
+        <h2>soheej site</h2>
+    {% endblock %}
+
+    <hr/>
+    &copy;! 2019_soheej
+
+    {% block extra_body %}
+        <script src="{% static 'main.js' %}"></script>
+    {% endblock %} {# 자바스크립트 등을 위하여 #}
+</body>
+</html>
